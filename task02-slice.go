@@ -1,16 +1,12 @@
 package homework
 
-import "sort"
-
 func reverse(input []int64) (result []int64) {
 
 	result = make([]int64, len(input))
 
-	copy(result, input)
-
-	sort.Slice(result, func(i, j int) bool {
-		return result[i] > result[j]
-	})
+	for i := range input {
+		result[len(input)-i-1] = input[i]
+	}
 
 	return result
 }
